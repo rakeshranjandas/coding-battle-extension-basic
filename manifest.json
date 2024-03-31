@@ -1,0 +1,25 @@
+{
+    "manifest_version": 3,
+    "name": "Coding Battle Extension Basic",
+    "version": "1.0.0",
+    "description": "Extension for creating contests and tracking submissions in Coding Battle",
+    "icons": {
+      "48": "images/icon-48.png",
+      "128": "images/icon-128.png"
+    },
+    "author": "rakesh",
+    "permissions": ["storage", "webNavigation", "tabs"],
+    "content_scripts": [
+        {
+            "matches": ["https://www.google.com/*"],
+            "js": ["content.js"],
+            "css": ["content.css"]
+        }
+    ],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "action": {
+        "default_popup": "./popup/popup.html"
+    }
+  }
